@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Countdown!</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <div class="header"></div>
+      <div class="targetBox">
+        <span id="title">
+          Instructions
+        </span>
+        <span id="instructions">
+          Click one of the boxes below to start a new game with that many big
+          numbers, from the set (25, 50, 75, 100). The remaining numbers, out of
+          five, will be from the range 1-10.
+        </span>
+        <span id="target">
+          000
+        </span>
+      </div>
+      <div class="container">
+        <div class="box" id="box01" data-box-id="1"></div>
+        <div class="box" id="box02" data-box-id="2"></div>
+        <div class="box" id="box03" data-box-id="3"></div>
+        <div class="box" id="box04" data-box-id="4"></div>
+        <div class="box" id="box05" data-box-id="5"></div>
+
+        <div id="buttonBox">
+          <div id="operatorBox">
+            <button class="operator" id="opPlus">
+              <i class="fas fa-plus"></i>
+            </button>
+            <button class="operator" id="opMinus">
+              <i class="fas fa-minus"></i>
+            </button>
+            <button class="operator" id="opTimes">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <!-- <style display="none">
+            <div id="opUndoBox">
+              <button class="operator" id="opUndo">
+                  <i class="fas fa-ban"></i>
+              </button>
+            </div>
+          </style> -->
+        </div>
+      </div>
+      <footer class="control-footer" id="mainControlFooter">
+        <div class="controlBox">
+          <button class="control control.newGame">
+            <span>New Game</span>
+          </button>
+          <button class="control control.restart">
+            <span>Restart</span>
+          </button>
+          <button class="control control.undo">
+            <span>Undo</span>
+          </button>
+        </div>
+      </footer>
+      <div id="modalContainer">
+        <div id="startModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Countdown!</h1>
+            <p>
+              In Countdown, 5 given numbers are presented along with a Target
+              number. Your goal: combine some or all of the given numbers with
+              the mathematical operations of addition, subtraction, or
+              multiplication in order to get the Target number.
+            </p>
+            <br />
+            <p>
+              The given numbers can be Big (25, 50, 75, or 100) or Small (1-10).
+              You get to choose how many of the 5 numbers will be Big. The rest
+              will be Small.
+            </p>
+          </div>
+        </div>
+        <div id="winModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>You win!</h1>
+            <footer class="control-footer">
+              <div class="controlBox">
+                <button class="control control.newGame">
+                  <span>New Game</span>
+                </button>
+              </div>
+            </footer>
+          </div>
+        </div>
+        <div id="loseModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>You lose</h1>
+            <footer class="control-footer">
+              <div class="controlBox">
+                <button class="control control.newGame">
+                  <span>New Game</span>
+                </button>
+                <button class="control control.restart">
+                  <span>Restart</span>
+                </button>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span></span>
+
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.12.0/underscore-min.js"></script>
+    <script type="module" src="./js/opNode.js"></script>
+    <script type="module" src="./js/game.js"></script>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
